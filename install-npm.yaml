@@ -1,0 +1,21 @@
+---
+- name: install nodejs and npm
+  hosts: 
+  tasks: 
+    - name: update apt repo and cache
+      apt: update-cache = yes force_apt_get = yes cache_valid_time = 3600
+    - name: Install nodejs and npm
+      apt:
+        pkg:
+        - nodejs
+        - npm
+
+
+- name: Deploy nodejs app
+  hosts:
+  tasks:
+    - name: download files
+      get_url:
+      url: https://gitlab.com/devops-bootcamp3/simple-nodejs.git
+      dest: /root
+    

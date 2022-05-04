@@ -1,0 +1,14 @@
+#/etc/ansible/hosts
+
+
+#ip   ansible_ssh__private_key_file=~/.shh/id_rsa ansible_user=root
+
+#ip   ansible_ssh__private_key_file=~/.shh/id_rsa ansible_user=root
+
+
+[webserver]
+
+
+[webserver:vars]
+ ansible_ssh__private_key_file=~/.shh/id_rsa
+ ansible_user=root
